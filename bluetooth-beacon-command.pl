@@ -38,7 +38,7 @@ while(1) {
       my @matchingBeacons = ();
       while(my $btLine = <$btIn_h>) {
          chomp($btLine);
-         push(@matchingBeacons, grep { /^$btLine$/ } @BEACONS);
+         push(@matchingBeacons, grep { /^\Q$btLine\E$/ } @BEACONS);
       }
 
       my @execCommands = ();
